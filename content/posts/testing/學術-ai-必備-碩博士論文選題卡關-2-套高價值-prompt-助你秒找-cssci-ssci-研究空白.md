@@ -1,4 +1,6 @@
----
+import os
+
+markdown_content = """---
 title: "【學術 AI 必備】碩博士論文選題卡關？2 套高價值 Prompt 助你秒找 CSSCI/SSCI 研究空白！"
 description: "還在為碩博士論文選題發愁？精選 2 套資深學術導師與熱點預測 AI 提示詞，一鍵帶入生成高創新性、兼具可行性的論文課題！"
 publishDate: "2026-08-02"
@@ -6,9 +8,9 @@ tags: ["AI提示詞", "學術神器", "論文選題", "免費資源", "生產力
 ogImage: "https://i.gyazo.com/cb6f2061d03b1f7b02e7e2db90ed06dc.png"
 ---
 
-每到畢業季或開題報告前夕，許多研究生與博士生最痛苦的莫過於**「選題」**。選題太舊容易被指導教授打回包票，選題太寬又難以落地，想找 CSSCI 或 SSCI 期刊的研究空白（Research Gap）更是無從下手？
+每到畢業季或開題報告前夕，許多研究生與博士生最痛苦的莫過於**「選題」**。選題太舊容易被指導教授打回，選題太寬又難以落地，想找 CSSCI 或 SSCI 期刊的研究空白（Research Gap）更是無從下手？
 
-別擔心！今天「撸域名」為大家整理了 2 套專為**「高價值選題挖掘」**設計的 AI 提示詞（Prompts）。無論你使用的是 ChatGPT、Claude 還是 Gemini API，直接複製貼上，就能讓 AI 化身為你的資深學術導師！
+別擔心！今天 **TTAILINN789** 為大家整理了 2 套專為**「高價值選題挖掘」**設計的 AI 提示詞（Prompts）。無論你使用的是 ChatGPT、Claude 還是 Gemini，直接複製貼上，就能讓 AI 化身為你的資深學術導師！
 
 ---
 
@@ -42,10 +44,17 @@ ogImage: "https://i.gyazo.com/cb6f2061d03b1f7b02e7e2db90ed06dc.png"
 
 這類學術與生產力 Prompt 如果能靈活搭配免費 AI API，還能做到自動化批量生成研究大綱與文獻綜述！
 
-如果你在操作過程上有任何疑問，或是想領取更多免綁卡的 AI 免費額度與自動化建站技巧，歡迎加入我們的私域社群一起交流討論！
+如果你在操作過程上有任何疑問，或是想領取更多免綁卡的 AI 免費額度與實用技巧，歡迎加入我們的私域社群一起交流討論！
 
 * 📢 **Telegram 官方頻道**：[點此加入 TG 頻道](https://ttailinn789.pse.is/tgchannel)
 * 💬 **LINE 讀者交流社群**：[點此加入 LINE 群組](https://ttailinn789.pse.is/9et2ad)
 
 ---
 *本文發布於 [TTAILINN789 日常紀實！](https://ttailinn789.dpdns.org/)，歡迎有空常來看看更多精選免費資源與工具分享！*
+"""
+
+file_path = "academic-prompts.md"
+with open(file_path, "w", encoding="utf-8") as f:
+    f.write(markdown_content)
+
+print(f"File saved successfully as {file_path}")

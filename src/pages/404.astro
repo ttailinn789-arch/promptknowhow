@@ -1,13 +1,29 @@
 ---
 import PageLayout from "@/layouts/Base.astro";
 
+// 404 頁面的 SEO 標題與描述
 const meta = {
-	description: "Oops! It looks like this page is lost in space!",
-	title: "Oops! You found a missing page!",
+	description: "糟糕！您訪問的頁面似乎迷路了，找不到對應的內容。",
+	title: "404 找不到頁面 | TTAILINN789 日常紀實！",
 };
 ---
 
 <PageLayout meta={meta}>
-	<h1 class="title mb-12">404 | Oops something went wrong</h1>
-	<p class="mb-8">Please use the navigation to find your way back</p>
+	<!-- 404 標題 -->
+	<h1 class="title mb-6">404 | 糟糕！找不到這個頁面</h1>
+	
+	<!-- 說明文字 -->
+	<p class="mb-8">
+		您點擊的連結可能已經更換網址、失效，或是輸入了錯誤的網址。
+	</p>
+
+	<!-- 返回首頁按鈕引導 -->
+	<p class="mb-8">
+		<a 
+			href="/" 
+			class="text-accent underline underline-offset-4 hover:text-accent-2 font-bold"
+		>
+			👉 點我返回網站首頁
+		</a>
+	</p>
 </PageLayout>

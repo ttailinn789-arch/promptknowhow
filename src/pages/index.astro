@@ -7,13 +7,16 @@ import { getAllPosts } from "@/data/post";
 import PageLayout from "@/layouts/Base.astro";
 import { collectionDateSort } from "@/utils/date";
 
-// Posts
+// ==========================================
+// 1. 文章與筆記資料抓取邏輯 (維持原創 logic)
+// ==========================================
+// 最多顯示最新文章數量
 const MAX_POSTS = 10;
 const allPosts = await getAllPosts();
 const allPostsByDate = allPosts.sort(collectionDateSort) as CollectionEntry<"post">[];
 const latestPosts = allPostsByDate.slice(0, MAX_POSTS);
 
-// Pinned Posts, set to a max of 3;
+// 置頂文章 (最多 3 篇)
 const MAX_PINNED_POSTS = 3;
 const pinnedPosts = allPostsByDate
 	.values()
@@ -21,7 +24,7 @@ const pinnedPosts = allPostsByDate
 	.take(MAX_PINNED_POSTS)
 	.toArray();
 
-// Notes, set to a max of 5
+// 隨手筆記 (最多 5 篇)
 const MAX_NOTES = 5;
 const allNotes = await getCollection("note");
 const latestNotes = allNotes
@@ -29,20 +32,19 @@ const latestNotes = allNotes
 	.slice(0, MAX_NOTES) as CollectionEntry<"note">[];
 ---
 
-<PageLayout meta={{ title: "Home" }}>
+<PageLayout meta={{ title: "首頁" }}>
 	<section>
-		<h1 class="title mb-12">歡迎來到 TTAILINN789 日常紀實！</h1>
+		<h1 class="title mb-6">歡迎來到 TTAILINN789 日常紀實！</h1>
 		<p class="mb-4">
-			Hi, I’m a theme for Astro, a simple starter that you can use to create your website or blog.
-			If you want to know more about how you can customise me, add more posts, and make it your own,
-			click on the GitHub icon link below and it will take you to my repo.
+			這裡可能會有你喜歡的免費資源，歡迎有空來看看。本站專門分享全網高 CP 值、免綁卡的實用數位工具、雲端服務與 AI 資源指南！
 		</p>
 		<SocialList />
 	</section>
+
 	{
 		pinnedPosts.length > 0 && (
 			<section class="mt-16">
-				<h2 class="title mb-6 text-xl">Pinned Posts</h2>
+				<h2 class="title mb-6 text-xl">📌 精選推薦文章</h2>
 				<ul class="space-y-4" role="list">
 					{pinnedPosts.map((p) => (
 						<li class="grid gap-1 sm:grid-cols-[auto_1fr]">
@@ -53,8 +55,11 @@ const latestNotes = allNotes
 			</section>
 		)
 	}
+
 	<section class="mt-16">
-		<h2 class="title text-accent mb-6 text-xl"><a href="/posts/">Posts</a></h2>
+		<h2 class="title text-accent mb-6 text-xl">
+			<a href="/posts/">📝 最新免費資源</a>
+		</h2>
 		<ul class="space-y-4" role="list">
 			{
 				latestPosts.map((p) => (
@@ -65,11 +70,12 @@ const latestNotes = allNotes
 			}
 		</ul>
 	</section>
+
 	{
 		latestNotes.length > 0 && (
 			<section class="mt-16">
 				<h2 class="title text-accent mb-6 text-xl">
-					<a href="/notes/">Notes</a>
+					<a href="/notes/">💡 隨手筆記與公告</a>
 				</h2>
 				<ul class="space-y-6" role="list">
 					{latestNotes.map((note) => (

@@ -1,36 +1,45 @@
 ---
 import PageLayout from "@/layouts/Base.astro";
 
+// 1. 頁面 SEO 標題與描述設定
 const meta = {
-	description: "I'm a starter theme for Astro.build",
-	title: "About",
+	description: "關於 TTAILINN789 日常紀實！本站專門分享全網優質免費資源、實用工具與日常紀錄。",
+	title: "關於本站",
 };
 ---
 
 <PageLayout meta={meta}>
-	<h1 class="title mb-12">About</h1>
+	<!-- 頁面大標題 -->
+	<h1 class="title mb-12">關於本站</h1>
+
+	<!-- 文章內文區塊 -->
 	<div class="prose prose-sm prose-cactus max-w-none">
 		<p>
-			Hi, I’m a starter Astro. I’m particularly great for getting you started with your own blogging
-			website.
+			歡迎來到 <strong>TTAILINN789 日常紀實！</strong> 🌟
 		</p>
-		<p>Here are my some of my awesome built in features:</p>
-		<ul class="list-inside list-disc" role="list">
-			<li>I'm ultra fast as I'm a static site</li>
-			<li>I'm fully responsive</li>
-			<li>I come with a light and dark mode</li>
-			<li>I'm easy to customise and add additional content</li>
-			<li>I have Tailwind CSS styling</li>
-			<li>Shiki code syntax highlighting</li>
-			<li>Satori for auto generating OG images for blog posts</li>
-		</ul>
 		<p>
-			Clone or fork my <a
-				class="cactus-link inline-block"
-				href="https://github.com/chrismwilliams/astro-cactus"
-				rel="noreferrer"
-				target="_blank">repo</a
-			> if you like me!
+			這裡是我專門用來記錄日常、整理並分享網路上各種高 CP 值**「免費資源」**的小天地。希望透過簡單清晰的文字，幫大家省去尋找與測試工具的時間！
+		</p>
+
+		<h2 class="text-xl font-bold mt-8 mb-4">🎁 本站主要分享什麼？</h2>
+		<ul class="list-inside list-disc space-y-2" role="list">
+			<li><strong>免費雲端與伺服器</strong>：免綁卡雲端空間、免費子域名與託管服務指南。</li>
+			<li><strong>實用數位工具</strong>：線上轉檔、免費圖庫、開源替代軟體推薦。</li>
+			<li><strong>AI 資源與 API</strong>：免費 AI 繪圖工具、Gemini / OpenAI API 額度領取教學。</li>
+			<li><strong>日常筆記與公告</strong>：網站更新紀錄、短篇心得與好康快訊。</li>
+		</ul>
+
+		<h2 class="text-xl font-bold mt-8 mb-4">💡 本站特色</h2>
+		<ul class="list-inside list-disc space-y-2" role="list">
+			<li><strong>極速載入</strong>：採用最新 Astro 靜態頁面技術，網頁秒開不卡頓。</li>
+			<li><strong>簡潔無廣告</strong>：提供最乾淨的閱讀體驗，專注於優質內容分享。</li>
+			<li><strong>響應式設計</strong>：不論使用手機、平板或電腦，都能輕鬆閱讀。</li>
+		</ul>
+
+		<hr class="my-8 border-border" />
+
+		<p>
+			如果你對本站分享的內容有任何興趣或建議，歡迎隨時關注與交流！有空記得常前來看看最新的免費資源更新喔！
 		</p>
 	</div>
 </PageLayout>

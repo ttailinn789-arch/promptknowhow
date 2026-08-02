@@ -1,8 +1,17 @@
 ---
-title: "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Id"
-description: "This post is purely for testing if the css is correct for the title on the page"
+title: "【測試】這是一篇用於測試網站標題與文章排版樣式的範例文章"
+description: "本篇文章純粹用於測試與驗證 CSS 樣式在頁面標題與文章內文上的顯示效果是否正常。"
 publishDate: "01 Feb 2023"
-tags: ["test"]
+tags: ["測試範例"]
 ---
 
-## Testing the title tag
+## 🧪 測試標題標籤 (H2 Heading)
+
+這是一段測試內文。本篇文章的主要目的是確認網站的字體大小、行高、標題顏色以及 Markdown 排版樣式（CSS）是否正常運作。
+
+---
+
+### 💡 測試子標題 (H3 Heading)
+
+* **測試項目 1**：繁體中文字體顯示與粗體樣式。
+* **測試項目 2**：段落間距與清單縮排效果。

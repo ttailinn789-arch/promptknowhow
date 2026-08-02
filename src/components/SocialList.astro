@@ -2,9 +2,9 @@
 import { Icon } from "astro-icon/components";
 
 /** 
-	Uses https://www.astroicon.dev/getting-started/
-	Find icons via guide: https://www.astroicon.dev/guides/customization/#open-source-icon-sets
-	Only installed pack is: @iconify-json/mdi
+	社群連結清單配置 (Social Links Configuration)
+	說明：使用 Iconify (MDI 圖示庫) 來動態渲染社群圖示
+	圖示搜尋參考：https://icon-sets.iconify.design/mdi/
 */
 const socialLinks: {
 	friendlyName: string;
@@ -13,26 +13,39 @@ const socialLinks: {
 	name: string;
 }[] = [
 	{
-		friendlyName: "Github",
-		link: "https://github.com/chrismwilliams/astro-cactus",
-		name: "mdi:github",
+		friendlyName: "Telegram 頻道",
+		link: "https://ttailinn789.pse.is/tgchannel",
+		name: "mdi:telegram", // MDI 圖示庫中的 Telegram 圖示
+	},
+	{
+		friendlyName: "LINE 交流社群",
+		link: "https://ttailinn789.pse.is/9et2ad",
+		name: "mdi:message-text-outline", // MDI 圖示庫中的聊天社群圖示 (亦可改為 mdi:line)
 	},
 ];
 ---
 
+<!-- 社群連結展示區塊 -->
 <div class="flex flex-wrap items-end gap-x-2">
-	<p>Find me on</p>
-	<ul class="flex flex-1 items-center gap-x-2 sm:flex-initial">
+	<!-- 前導提示文字（已繁體中文化） -->
+	<p class="font-bold">歡迎關注與加入社群：</p>
+	
+	<!-- 社群圖示連結列表 -->
+	<ul class="flex flex-1 items-center gap-x-3 sm:flex-initial">
 		{
 			socialLinks.map(({ friendlyName, isWebmention, link, name }) => (
 				<li class="flex">
 					<a
-						class="hover:text-link inline-block"
+						class="hover:text-link inline-block transition-transform hover:scale-110"
 						href={link}
 						rel={`noreferrer ${isWebmention ? "me authn" : ""}`}
 						target="_blank"
+						title={`前往 ${friendlyName}`}
 					>
+						<!-- 動態渲染社群 Icon -->
 						<Icon aria-hidden="true" class="h-8 w-8" focusable="false" name={name} />
+						
+						<!-- 螢幕閱讀器無障礙標籤 -->
 						<span class="sr-only">{friendlyName}</span>
 					</a>
 				</li>

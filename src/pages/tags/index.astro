@@ -2,30 +2,37 @@
 import { getAllPosts, getUniqueTagsWithCount } from "@/data/post";
 import PageLayout from "@/layouts/Base.astro";
 
+// 1. 抓取所有文章並統計各標籤的數量
 const allPosts = await getAllPosts();
 const allTags = getUniqueTagsWithCount(allPosts);
 
+// 2. 頁面 SEO 標題與描述設定
 const meta = {
-	description: "A list of all the topics I've written about in my posts",
-	title: "All Tags",
+	description: "這裡彙整了所有網站文章出現過的分類標籤與主題索引",
+	title: "所有文章標籤",
 };
 ---
 
 <PageLayout meta={meta}>
-	<h1 class="title mb-6">Tags</h1>
+	<!-- 頁面大標題 -->
+	<h1 class="title mb-6">🏷️ 所有文章標籤</h1>
+
+	<!-- 標籤列表區塊 -->
 	<ul class="space-y-4">
 		{
 			allTags.map(([tag, val]) => (
 				<li class="flex items-center gap-x-2">
+					<!-- 標籤連結 -->
 					<a
 						class="cactus-link inline-block"
 						href={`/tags/${tag}/`}
-						title={`View posts with the tag: ${tag}`}
+						title={`檢視帶有「${tag}」標籤的所有文章`}
 					>
 						&#35;{tag}
 					</a>
-					<span class="inline-block">
-						- {val} Post{val > 1 && "s"}
+					<!-- 文章數量統計 -->
+					<span class="inline-block text-quote">
+						- 共 {val} 篇文章
 					</span>
 				</li>
 			))

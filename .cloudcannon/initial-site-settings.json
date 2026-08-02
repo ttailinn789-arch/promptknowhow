@@ -1,0 +1,14 @@
+{
+  "ssg": "astro",
+  "mode": "hosted",
+  "build": {
+    "hugoVersion": "0.157.0",
+    "rubyVersion": "3.4.8",
+    "nodeVersion": "file",
+    "denoVersion": "2.7.1",
+    "install_command": "npm install",
+    "build_command": "npm run build",
+    "output_path": "dist",
+    "preserved_paths": "node_modules/"
+  }
+}

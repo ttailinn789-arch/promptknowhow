@@ -1,9 +1,8 @@
 ---
-title: Hello, Welcome
-description: An introduction to using the note feature in Astro Cactus
-publishDate: "2024-10-14T11:23:00Z"
+title: "歡迎來到 TTAILINN789 日常紀實！"
+publishDate: "2026-02-02T17:00:00Z"
 ---
 
-Hi, Hello. This is an example note feature included with Astro Cactus 🌵
+嗨！歡迎來到我的網站 🌿
 
-They're for shorter, more concise posts that you'd like to share. They generally don't include headings, but hey, it's entirely up to you!
+這裡會不定期發布一些免費資源資訊與網站更新公告。隨手筆記主要用來發布短篇訊息，更多完整的工具介紹可以到「免費資源文章」分類查看喔！

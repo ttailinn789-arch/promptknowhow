@@ -1,9 +1,17 @@
 ---
-title: "A working draft title"
-description: "This post is for testing the draft post functionality"
+title: "【草稿測試】這是一篇正在撰寫中的草稿標題"
+description: "本篇文章用於測試網站的草稿（Draft）隱藏與預覽功能。"
 publishDate: "10 March 2024"
-tags: ["test"]
+tags: ["草稿測試"]
 draft: true
 ---
 
-If this is working correctly, this post should only be accessible in a dev environment, as well as any tags that are unique to this post.
+## 📝 草稿功能測試內文
+
+如果這個草稿功能運作正常，這篇文章**只會在本地開發環境（Dev Environment）中被看到**。
+
+當網站正式打包發布（Build）到 Vercel 或 CloudCannon 上時，這篇文章以及專屬於這篇文章的標籤（例如「草稿測試」）都會被系統自動隱藏，不會公開展示給一般讀者看！
+
+---
+
+> 💡 **小提示**：未來如果有寫到一半、還沒準備好公開的文章，只要在開頭加上 `draft: true`，就可以安心存在儲存庫裡囉！若想公開發布，只需把 `draft: true` 改為 `draft: false` 或直接刪除該行即可。

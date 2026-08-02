@@ -1,11 +1,11 @@
 import type { AstroExpressiveCodeOptions } from "astro-expressive-code";
-import type { SiteConfig } from "@/types";
+import type { SiteConfig, SocialLinks } from "@/types";
 
 // =========================================================================
 // 1. 網站全局基本資訊設定 (Site Config)
 // =========================================================================
 export const siteConfig: SiteConfig = {
-	// 【關鍵】請把這裡換成你的免費子域名，網址結尾要加上斜線 /
+	// 【關鍵】你的免費子域名，網址結尾加上斜線 /
 	url: "https://ttailinn789.dpdns.org/",
 
 	// 網站名稱 (會顯示在頂部 Header、頁尾 Footer 與 SEO 標題)
@@ -60,7 +60,24 @@ export const menuLinks: { path: string; title: string }[] = [
 ];
 
 // =========================================================================
-// 3. 程式碼區塊高亮與主題樣式設定 (Expressive Code Settings)
+// 3. 社群連結設定 (Social Links)
+// 註解：已植入 Telegram 頻道與 LINE 社群連結，供全站頁尾與社群組件調用
+// =========================================================================
+export const socialLinks: SocialLinks = [
+	{
+		friendlyName: "Telegram 頻道",
+		link: "https://ttailinn789.pse.is/tgchannel",
+		name: "mdi:telegram", // Telegram 圖示標記
+	},
+	{
+		friendlyName: "LINE 交流社群",
+		link: "https://ttailinn789.pse.is/9et2ad",
+		name: "ri:line-fill", // LINE 圖示標記
+	},
+];
+
+// =========================================================================
+// 4. 程式碼區塊高亮與主題樣式設定 (Expressive Code Settings)
 // 註解：這部分維持模板預設即可，確保文章內的程式碼與配色能正常顯示
 // =========================================================================
 export const expressiveCodeOptions: AstroExpressiveCodeOptions = {
